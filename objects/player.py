@@ -20,9 +20,10 @@ class Player:
     
     def change_head(self):
         self.player[0] = '     x'
+        self.print_player()
         self.is_playing = False
 
     def print_player(self):
-        for i in len(self.player):
+        for i in range(0,len(self.player)):
             print(self.player[i])
     

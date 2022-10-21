@@ -9,7 +9,9 @@ import random
 class Word:
     
     def __init__(self):
-        self.word_list =['put words here']
+        self.word_list =[ 'dog', 'long', 'black',
+        'phone', 'friendly', 'stage', 'alike', 'leap', 'point',
+        'adjust', 'rated', 'space', 'planet', 'drink']
         self.guess_letters = []
         self.actual_letters = []
         self.answer = []
@@ -31,7 +33,23 @@ class Word:
         if guess in self.guess_letters:
             print('Letter already guessed! Try again.')
             return False
-        self.guess_letters.append(guess)
-        index = self.actual_letters.index(guess)
-        self.answer[index] = guess
-        return True
+        elif guess in self.actual_letters:
+            self.index = self.actual_letters.index(guess)
+            self.answer[self.index] = guess
+            self.guess_letters.append(guess)
+            return True
+        else:
+            self.guess_letters.append(guess)
+            return False
+            
+
+        
+
+    def showProgress(self):
+        for i in range(self.word_length):
+            print(self.answer[i], end=" ")
+
+    def showGuesses(self):
+        print("You have guessed: ", end="")
+        for i in range(len(self.guess_letters)):
+            print(self.guess_letters[i], end=" ")
