@@ -21,3 +21,8 @@ class Player:
     def change_head(self):
         self.player[0] = '     x'
         self.is_playing = False
+
+    def print_player(self):
+        for i in len(self.player):
+            print(self.player[i])
+    

@@ -2,6 +2,7 @@
 Parachute tracks 4 "lives"
 Parachute ASCII art shown and managed (disappear)
 List of strings printed:
+-------
 List @3    ___
 List @2   /___\
 List @1   \   /
@@ -22,3 +23,7 @@ class Parachute:
     def lost_life(self):
         self.parachute = self.parachute[:-1]
         self.lives -= 1
+    
+    def print_chute(self):
+        for i in len(self.parachute):
+            print(self.parachute[i])
